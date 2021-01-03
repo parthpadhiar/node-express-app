@@ -1,0 +1,42 @@
+<%- include('partials/headerUser') %>
+<div class="well">
+    <h1 align="center" >Display</h1>
+</div>
+<div class="container" align="center">
+    <div class="jumbotron container" style="box-sizing: border-box;">
+        <div class="wrap">
+            <br>
+            <div class="scroll">
+            <table border="1" class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" style="text-align: center;">Image</th>
+                            <th scope="col"  style="text-align: center;">Detail</th>
+                            <th scope="col"  style="text-align: center;">Price(Rupees)</th>
+                        </tr>     
+                    </thead>
+                    <tbody>
+                        
+                        <% for(var i = 0; i < data.length; i++){  %>
+                            
+                            <tr>
+                                <td align="center">
+                                    <img src="../uploads/<%= data[i].image %>" width="350" height="200" style="padding: 5px;border: black;">
+                                </td>                                
+                                <td style="font-size: 20px;">
+                                    <%=  data[i].details %>
+                                </td>
+                                <td  style="font-size: 20px; text-align: center;">
+                                    <%=  data[i].price %>
+                                </td>                                
+                            </tr>
+
+                            <% } %>
+                        
+                    </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer') %>
